@@ -3564,10 +3564,14 @@ function SwapBytes(Value: LongWord): LongWord;
 type
   Bytes = packed array[0..3] of Byte;
 begin
-  Bytes(Result)[0]:= Bytes(Value)[3];
-  Bytes(Result)[1]:= Bytes(Value)[2];
-  Bytes(Result)[2]:= Bytes(Value)[1];
-  Bytes(Result)[3]:= Bytes(Value)[0];
+//  Bytes(Result)[0]:= Bytes(Value)[3];
+//  Bytes(Result)[1]:= Bytes(Value)[2];
+//  Bytes(Result)[2]:= Bytes(Value)[1];
+//  Bytes(Result)[3]:= Bytes(Value)[0];
+  TBytes(Result)[0] := TBytes(Value)[3];
+  TBytes(Result)[1] := TBytes(Value)[2];
+  TBytes(Result)[2] := TBytes(Value)[1];
+  TBytes(Result)[3] := TBytes(Value)[0];
 end;
 
 function SwapBytes(Value: Word): Word;
